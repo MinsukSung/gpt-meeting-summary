@@ -1,9 +1,9 @@
-package com.gpt.meetingnotes.summary.controller;
+package com.gpt.meetingnotes.summary.controller.api;
 
 import java.util.Arrays;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gpt.meetingnotes.summary.dto.AnalyzeResponse;
@@ -11,16 +11,17 @@ import com.gpt.meetingnotes.summary.dto.AnalyzeResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController("/api/summary")
+@RequestMapping("/api/summary")
+@RestController
 public class SummaryApiController {
 	
 	@PostMapping(value="/analyze")
-	public ResponseEntity<AnalyzeResponse> procMeetingAnalyze() {
+	public AnalyzeResponse procMeetingAnalyze() {
 		log.debug("/analyze");
 		
 		AnalyzeResponse res = new AnalyzeResponse("2025-07-16", Arrays.asList("a","b"), "요약샘플");
 		
-		return ResponseEntity.ok(res);
+		return res;
 	}
 	
 }

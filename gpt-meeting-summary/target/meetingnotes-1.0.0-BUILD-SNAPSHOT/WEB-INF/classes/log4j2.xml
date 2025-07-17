@@ -4,24 +4,22 @@
                xsi:schemaLocation="
                    https://logging.apache.org/xml/ns
                    https://logging.apache.org/xml/ns/log4j-config-2.xsd"
-               status="DEBUG">
+               >
                
   <Properties>
   	<Property name="log.level">${sys:log.level:-info}</Property>
   	<Property name="log.file">${sys:log.file:-logs/default.log}</Property>
-  	<Property name="log.pattern">${sys:log.pattern:-[%d] %-level %logger{36} - %msg%n}</Property>
+  	<Property name="log.pattern">[%d{yyyy-MM-dd HH:mm:ss}][%-5level][%logger{36}] - %msg%n</Property>
   </Properties>
   <Appenders>
     <Console name="Console" target="SYSTEM_OUT"> 
       <PatternLayout pattern="${log.pattern}"/>
+      <BufferedIO>false</BufferedIO>
     </Console>
    
-    <File name="FileAppender" fileName="${log.file}"> 
-      <PatternLayout pattern="${log.pattern}"/>
-    </File>
   </Appenders>
   <Loggers>
-    <Root level="${log.level}"> 
+    <Root level="${log.level}" additivity="false"> 
       <AppenderRef ref="Console"/>
     </Root>
   </Loggers>

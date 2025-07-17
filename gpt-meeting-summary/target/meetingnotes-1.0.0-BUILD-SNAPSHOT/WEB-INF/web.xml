@@ -29,5 +29,42 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 에러 핸들링 공통 처리 -->
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/error/404</location>
+	</error-page>
+	
+	<error-page>
+	    <error-code>500</error-code>
+	    <location>/error/500</location>
+	</error-page>
+	
+	<!-- 그 외 모든 예외 -->
+	<error-page>
+	    <exception-type>com.gpt.meetingnotes.common.exception.ApplicationException</exception-type>
+	    <location>/error/serviceError</location>
+	</error-page>
+	<error-page>
+	    <exception-type>java.lang.Throwable</exception-type>
+	    <location>/error/default</location>
+	</error-page>
 </web-app>
