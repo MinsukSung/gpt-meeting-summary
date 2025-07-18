@@ -1,12 +1,12 @@
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\dto\AnalyzeResponse.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\controller\api\SummaryApiController.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\advice\GlobalApiExceptionHandler.java
-C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\utils\RequestUtils.java
-C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\controller\web\TestWebController.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\gpt\service\impl\GptServiceImpl.java
+C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\config\MessageConverterConfig.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\dto\CommonResponse.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\enums\ErrorCode.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\controller\ErrorPageController.java
+C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\dto\AnalyzeRequest.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\config\LogConfig.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\advice\GlobalWebExceptionHandler.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\exception\ApplicationException.java
@@ -14,5 +14,4 @@ C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\common\advice\GlobalApiControllerAdvice.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\config\MessageConfig.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\controller\web\SummaryWebController.java
-C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\summary\controller\api\TestApiController.java
 C:\Users\User\git\gpt-meeting-summary\gpt-meeting-summary\src\main\java\com\gpt\meetingnotes\gpt\service\GptService.java

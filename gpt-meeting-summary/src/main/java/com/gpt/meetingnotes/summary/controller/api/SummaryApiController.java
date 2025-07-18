@@ -1,11 +1,12 @@
 package com.gpt.meetingnotes.summary.controller.api;
 
-import java.util.Arrays;
+import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gpt.meetingnotes.summary.dto.AnalyzeRequest;
 import com.gpt.meetingnotes.summary.dto.AnalyzeResponse;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,10 +17,10 @@ import lombok.extern.slf4j.Slf4j;
 public class SummaryApiController {
 	
 	@PostMapping(value="/analyze")
-	public AnalyzeResponse procMeetingAnalyze() {
+	public AnalyzeResponse procMeetingAnalyze(@Valid AnalyzeRequest analyzeRequest) {
 		log.debug("/analyze");
 		
-		AnalyzeResponse res = new AnalyzeResponse("2025-07-16", Arrays.asList("a","b"), "요약샘플");
+		AnalyzeResponse res = new AnalyzeResponse("요약샘플");
 		
 		return res;
 	}

@@ -63,6 +63,7 @@
 	    <exception-type>com.gpt.meetingnotes.common.exception.ApplicationException</exception-type>
 	    <location>/error/serviceError</location>
 	</error-page>
+	
 	<error-page>
 	    <exception-type>java.lang.Throwable</exception-type>
 	    <location>/error/default</location>

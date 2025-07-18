@@ -4,10 +4,14 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gpt.meetingnotes.summary.dto.AnalyzeRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,5 +33,12 @@ public class SummaryWebController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+	}
+	
+	@GetMapping(value = "/analyze")
+	public String analyze(@Valid AnalyzeRequest analyzeRequest, Model model) {
+		
+		
+		return "summary/analyze";
 	}
 }

@@ -10,7 +10,7 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.3.39</org.springframework-version>
-		<org.apache-poi-verison>5.2.3</org.apache-poi-verison>
+		<org.apache-poi-version>5.2.3</org.apache-poi-version>
 		<org.aspectj-version>1.9.21</org.aspectj-version>
 		<org.slf4j-version>1.7.36</org.slf4j-version>
 		<log4j2-version>2.20.0</log4j2-version>
@@ -103,12 +103,12 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>${org.apache-poi-verison}</version>
+			<version>${org.apache-poi-version}</version>
 		</dependency>   
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>${org.apache-poi-verison}</version>
+			<version>${org.apache-poi-version}</version>
 		</dependency>    
 		
 		<!-- JSON -->
@@ -144,6 +144,67 @@
 			<artifactId>snakeyaml</artifactId>
 			<version>2.0</version>
 		</dependency>
+		
+		<!-- JUnit 5 -->
+		<dependency>
+		  <groupId>org.junit.jupiter</groupId>
+		  <artifactId>junit-jupiter</artifactId>
+		  <version>5.10.0</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<!-- Mockito -->
+		<dependency>
+		  <groupId>org.mockito</groupId>
+		  <artifactId>mockito-core</artifactId>
+		  <version>5.2.0</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<!-- Spring Test -->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-test</artifactId>
+		  <version>${org.springframework-version}</version>
+		  <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>3.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>javax.el</groupId>
+		    <artifactId>javax.el-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- javax.validation API -->
+		<dependency>
+		  <groupId>javax.validation</groupId>
+		  <artifactId>validation-api</artifactId>
+		  <version>2.0.1.Final</version>
+		</dependency>
+		
+		<!-- Hibernate Validator -->
+		<dependency>
+		  <groupId>org.hibernate.validator</groupId>
+		  <artifactId>hibernate-validator</artifactId>
+		  <version>6.2.5.Final</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
@@ -168,15 +229,15 @@
             		<warSourceDirectory>src/main/webapp</warSourceDirectory>
             	</configuration>
             </plugin>
-           
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <configuration>
-                    <mainClass>org.test.int1.Main</mainClass>
-                </configuration>
-            </plugin>
+           	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			  	<artifactId>maven-surefire-plugin</artifactId>
+			  	<version>3.2.5</version>
+			  	<configuration>
+			    	<useModulePath>false</useModulePath> <!-- Java 8용 -->
+			  	</configuration>
+			</plugin>
+            
         </plugins>
     </build>
 </project>
