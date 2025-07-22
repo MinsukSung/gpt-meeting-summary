@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+import com.gpt.meetingnotes.common.annotation.SuccessCodeMapping;
 import com.gpt.meetingnotes.common.dto.CommonResponse;
-import com.gpt.meetingnotes.common.enums.ErrorCode;
+import com.gpt.meetingnotes.common.enums.ResponseCode;
+import com.gpt.meetingnotes.common.enums.SuccessCode;
 
 import lombok.RequiredArgsConstructor;
 
@@ -37,16 +39,30 @@ public class GlobalApiControllerAdvice implements ResponseBodyAdvice<Object> {
 			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
 			ServerHttpResponse response) {
 		
-		if (body instanceof CommonResponse) return body;
-		
-		// 파일 응답 예외 처리
-	    if (body instanceof Resource || body instanceof InputStreamSource || body instanceof byte[]) {
+		if (body instanceof CommonResponse ||
+	        body instanceof Resource ||
+	        body instanceof InputStreamSource ||
+	        body instanceof byte[]) {
 	        return body;
 	    }
 		
+		
+		//기본은 OK
+	    SuccessCode successCode = SuccessCode.OK;
+
+	    //커스텀 어노테이션이 있는 경우 우선 적용
+	    SuccessCodeMapping annotation = returnType.getMethodAnnotation(SuccessCodeMapping.class);
+	    if (annotation != null) {
+	        successCode = annotation.value();
+	    }
+
+	    // ✅ HTTP 상태코드 설정
+	    response.setStatusCode(successCode.getHttpStatus());
+
+		
 		return new CommonResponse<>(
-				ErrorCode.SUCCESS.getCode(),
-				messageSource.getMessage(ErrorCode.SUCCESS.getMessageKey(), null, LocaleContextHolder.getLocale()),
+				successCode.getCode(),
+				messageSource.getMessage(successCode.getMessageKey(), null, LocaleContextHolder.getLocale()),
 				body
 			);
 	}

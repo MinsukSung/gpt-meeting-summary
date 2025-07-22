@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.gpt.meetingnotes.common.enums.ErrorCode;
+import com.gpt.meetingnotes.common.enums.ServiceErrorCode;
 import com.gpt.meetingnotes.summary.config.WebMvcTestConfig;
 import com.gpt.meetingnotes.utils.TestUtils;
 
@@ -88,7 +88,7 @@ public class TestApiControllerTest {
 	    void testApplicationException() throws Exception {
 	        MvcResult result = mockMvc.perform(get("/mock/summary/api/exception"))
 	                .andExpect(status().isInternalServerError())
-	                .andExpect(jsonPath("$.code").value(ErrorCode.SUMMARY_FAILED.getCode()))
+	                .andExpect(jsonPath("$.code").value(ServiceErrorCode.SUMMARY_GENERATION_FAILED.getCode()))
 	                .andExpect(jsonPath("$.message").exists())
 	                .andReturn();
 
@@ -100,7 +100,7 @@ public class TestApiControllerTest {
 	    void testNullPointerException() throws Exception {
 	        MvcResult result = mockMvc.perform(get("/mock/summary/api/null"))
 	                .andExpect(status().isInternalServerError())
-	                .andExpect(jsonPath("$.code").value(ErrorCode.NULL_POINTER.getCode()))
+	                .andExpect(jsonPath("$.code").value(ServiceErrorCode.NULL_POINTER.getCode()))
 	                .andExpect(jsonPath("$.message").exists())
 	                .andReturn();
 

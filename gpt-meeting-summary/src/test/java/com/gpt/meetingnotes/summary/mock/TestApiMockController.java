@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gpt.meetingnotes.common.enums.ErrorCode;
+import com.gpt.meetingnotes.common.enums.ServiceErrorCode;
 import com.gpt.meetingnotes.common.exception.ApplicationException;
 import com.gpt.meetingnotes.summary.dto.AnalyzeRequest;
 import com.gpt.meetingnotes.summary.dto.AnalyzeResponse;
@@ -44,7 +44,7 @@ public class TestApiMockController {
      */
     @GetMapping(value = "/exception", produces = "application/json; charset=UTF-8")
     public String throwApplicationException() {
-        throw new ApplicationException(ErrorCode.SUMMARY_FAILED);
+        throw new ApplicationException(ServiceErrorCode.SUMMARY_GENERATION_FAILED);
     }
 
     /**

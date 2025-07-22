@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gpt.meetingnotes.common.enums.ErrorCode;
+import com.gpt.meetingnotes.common.enums.ServiceErrorCode;
 import com.gpt.meetingnotes.common.exception.ApplicationException;
 import com.gpt.meetingnotes.summary.dto.AnalyzeRequest;
 
@@ -45,7 +45,7 @@ public class TestWebMockController {
 	
 	@GetMapping("/exception")
     public String triggerApplicationException() {
-        throw new ApplicationException(ErrorCode.SUMMARY_FAILED);
+        throw new ApplicationException(ServiceErrorCode.SUMMARY_GENERATION_FAILED);
     }
 
     @GetMapping("/null")

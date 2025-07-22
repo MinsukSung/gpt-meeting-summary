@@ -22,7 +22,7 @@ public class MessageConfig {
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource  source = new ReloadableResourceBundleMessageSource();
-		source.setBasenames("classpath:message/messages", "classpath:message/validationMessages");
+		source.setBasenames("classpath:message/messages");
 		source.setDefaultEncoding("UTF-8");
 	    source.setCacheSeconds(5);  //5초마다 핫리로드
 	    source.setUseCodeAsDefaultMessage(true);
