@@ -47,6 +47,26 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
+	<!-- XSS 필터 -->
+	<filter>
+	    <filter-name>xssEscapeFilter</filter-name>
+	    <filter-class>com.gpt.meetingnotes.common.filter.XssEscapeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>xssEscapeFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+	    <filter-name>loggingFilter</filter-name>
+	    <filter-class>com.gpt.meetingnotes.common.filter.LoggingFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>loggingFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- 에러 핸들링 공통 처리 -->
 	<error-page>
 	    <error-code>404</error-code>

@@ -1,27 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: com.gpt.meetingnotes.summary.controller.TestApiControllerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.848 s <<< FAILURE! -- in com.gpt.meetingnotes.summary.controller.TestApiControllerTest
-com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testI18nEnglish -- Time elapsed: 0.040 s <<< FAILURE!
-java.lang.AssertionError: JSON path "$.message" expected:<Success> but was:<response.success>
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.310 s <<< FAILURE! -- in com.gpt.meetingnotes.summary.controller.TestApiControllerTest
+com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testErrorValidResponseEn -- Time elapsed: 0.110 s <<< FAILURE!
+java.lang.AssertionError: Range for response status value 200 expected:<CLIENT_ERROR> but was:<SUCCESSFUL>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:125)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$is4xxClientError$5(StatusResultMatchers.java:94)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testI18nEnglish(TestApiControllerTest.java:103)
+	at com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testErrorValidResponseEn(TestApiControllerTest.java:79)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 
-com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testI18nKorean -- Time elapsed: 0.007 s <<< FAILURE!
-java.lang.AssertionError: JSON path "$.message" expected:<성공> but was:<response.success>
+com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testErrorValidResponse -- Time elapsed: 0.005 s <<< FAILURE!
+java.lang.AssertionError: Range for response status value 200 expected:<CLIENT_ERROR> but was:<SUCCESSFUL>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
-	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:125)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$is4xxClientError$5(StatusResultMatchers.java:94)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testI18nKorean(TestApiControllerTest.java:91)
+	at com.gpt.meetingnotes.summary.controller.TestApiControllerTest.testErrorValidResponse(TestApiControllerTest.java:67)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)

@@ -1,4 +1,37 @@
 -------------------------------------------------------------------------------
 Test set: com.gpt.meetingnotes.summary.controller.TestWebControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in com.gpt.meetingnotes.summary.controller.TestWebControllerTest
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.064 s <<< FAILURE! -- in com.gpt.meetingnotes.summary.controller.TestWebControllerTest
+com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testErrorAnalyzepage -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: View name expected:<error/validationError> but was:<summary/analyze>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.ViewResultMatchers.lambda$name$1(ViewResultMatchers.java:69)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testErrorAnalyzepage(TestWebControllerTest.java:59)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+
+com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testNullPointerView -- Time elapsed: 0.011 s <<< FAILURE!
+java.lang.AssertionError: Request attribute 'errorCode' expected:<NULL_POINTER> but was:<S630>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.RequestResultMatchers.lambda$attribute$5(RequestResultMatchers.java:126)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testNullPointerView(TestWebControllerTest.java:77)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+
+com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testApplicationExceptionView -- Time elapsed: 0.004 s <<< FAILURE!
+java.lang.AssertionError: Request attribute 'errorCode' expected:<SUMMARY_FAILED> but was:<S610>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.RequestResultMatchers.lambda$attribute$5(RequestResultMatchers.java:126)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.gpt.meetingnotes.summary.controller.TestWebControllerTest.testApplicationExceptionView(TestWebControllerTest.java:68)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+
