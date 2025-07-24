@@ -10,6 +10,11 @@ public class ErrorPageController {
 		return "error/404";
 	}
 	
+	@GetMapping("/error/405")
+	public String error405() {
+		return "error/405";
+	}
+	
 	@GetMapping("/error/500")
 	public String error500() {
 	    return "error/500";

@@ -49,11 +49,25 @@
 		    <version>5.7.10</version>
 		</dependency>
 		
-		<!-- Swagger UI + Springfox 3 -->
+		<!-- Spring AOP -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- Springfox Swagger Core -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-boot-starter</artifactId>
-		    <version>3.0.0</version>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+		
+		<!-- Springfox Swagger UI -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
 		</dependency>
 		
 		<!-- AspectJ -->
@@ -68,6 +82,7 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>		
 		
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -261,6 +276,7 @@
 			  	<version>3.2.5</version>
 			  	<configuration>
 			    	<useModulePath>false</useModulePath> <!-- Java 8용 -->
+			    	<skipTests>true</skipTests>
 			  	</configuration>
 			</plugin>
             

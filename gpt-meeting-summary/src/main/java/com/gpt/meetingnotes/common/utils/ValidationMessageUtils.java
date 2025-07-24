@@ -11,7 +11,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ValidationMessageUtils {
 	 /**
@@ -42,9 +44,11 @@ public class ValidationMessageUtils {
 
         List<String> messages = new ArrayList<>();
         for (FieldError error : fieldErrors) {
-            String fieldName = error.getField();
+           
             String code = error.getCode(); // e.g. "NotBlank", "Size" 등
-            String resolvedMessage = messageSource.getMessage(code, new Object[]{fieldName}, locale);
+            log.debug(">>>>>>>>>>>>>>>>> : {}", code);
+            String resolvedMessage = messageSource.getMessage(error, locale);
+            log.debug(">>>>>>>>>>>>>>>>> : {}", resolvedMessage);
             messages.add(resolvedMessage);
         }
 
